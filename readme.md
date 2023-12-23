@@ -20,3 +20,26 @@
 //  Use `pm2 env 0` to display environment variables
 //  Use `pm2 monit` to monitor CPU and Memory usage server
 ```
+
+#### Pm2 watch mode
+
+`application restart via pm2 restart app --watch .` <br>
+
+PM2 can automatically restart your application when a file is modified in the current directory or its subdirectories:
+
+pm2 start app.js --watch
+Or via configuration file set the option watch: true.
+
+If an application is started with the --watch option, stopping the app will not prevent it to be restarted on file change. To totally disable the watch feature, do: pm2 stop app --watch or toggle the watch option on application restart via pm2 restart app --watch.
+
+To watch specific paths, please use a Ecosystem File, watch can take a string or an array of paths. Default is true:
+
+module.exports = {
+apps: [{
+script: "app.js",
+watch: ["server", "client"],
+// Delay between restart
+watch_delay: 1000,
+ignore_watch : ["node_modules", "client/img", "\\.git", "*.log"],
+}]
+}

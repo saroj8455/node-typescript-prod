@@ -34,6 +34,7 @@ app.get('/', async (req: Request, res: Response) => {
     return res.status(StatusCodes.OK).jsonp({
       message: `⚡ 🖥️ Server is running here 👉 http://localhost:${PORT}`,
       status: `${encyHost}`,
+      watchStatus: 'App is watching mode.',
     });
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).jsonp({
