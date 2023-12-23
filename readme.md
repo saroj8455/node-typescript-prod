@@ -47,3 +47,5 @@ ignore_watch : ["node_modules", "client/img", "\\.git", "*.log"],
 ### rest api like dev.http
 
 `### provide 3 hash for enable get call` <br>
+
+### rest docs https://medium.com/lseg-developer-community/how-to-test-rest-api-with-visual-studio-code-rest-client-extensions-9f2e061d0299
