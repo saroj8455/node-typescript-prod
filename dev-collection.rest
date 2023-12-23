@@ -1,0 +1,12 @@
+@base_url = http://localhost:4000/
+
+### provide 3 hash for enable get call
+### Health check
+GET {{base_url}}
+
+
+### Simulate error
+GET {{base_url}}error
+Content-Type: application/json
+
+
